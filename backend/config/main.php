@@ -11,12 +11,23 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [
-        'setings' => [
-            'class' => 'backend\modules\settings\Settings',
+    'modules' => [],
+    'language'=>'es_CO',
+    'components' => [
+        'view' => [
+         'theme' => [
+             'pathMap' => [
+                '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+             ],
+         ],
+    ],
+    'assetManager' => [
+        'bundles' => [
+            'dmstr\web\AdminLteAsset' => [
+                'skin' => 'skin-blue',
+            ],
         ],
     ],
-    'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],

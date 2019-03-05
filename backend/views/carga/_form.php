@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idCarga')->textInput() ?>
-
     <?= $form->field($model, 'FechaLimite')->textInput() ?>
 
     <?= $form->field($model, 'ValorOfertado')->textInput(['maxlength' => true]) ?>
@@ -25,7 +23,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Empresa')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

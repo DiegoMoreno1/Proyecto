@@ -32,10 +32,9 @@ class Transportador extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idTransportador', 'Documento', 'Nombres', 'Apellidos', 'Telefono', 'Correo'], 'required'],
-            [['idTransportador', 'Documento', 'Telefono'], 'integer'],
+            [['Documento', 'Nombres', 'Apellidos', 'Telefono', 'Correo'], 'required'],
+            [['Documento', 'Telefono'], 'integer'],
             [['Nombres', 'Apellidos', 'Correo'], 'string', 'max' => 45],
-            [['idTransportador'], 'unique'],
         ];
     }
 

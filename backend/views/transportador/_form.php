@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idTransportador')->textInput() ?>
-
     <?= $form->field($model, 'Documento')->textInput() ?>
 
     <?= $form->field($model, 'Nombres')->textInput(['maxlength' => true]) ?>
@@ -25,7 +23,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Correo')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
