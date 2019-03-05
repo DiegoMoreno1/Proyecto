@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idEmpresa')->textInput() ?>
-
     <?= $form->field($model, 'Nombre')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'Rsocial')->textInput(['maxlength' => true]) ?>
@@ -21,7 +19,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'NombreR')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
