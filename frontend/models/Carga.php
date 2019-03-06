@@ -33,11 +33,10 @@ class Carga extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idCarga', 'FechaLimite', 'ValorOfertado', 'Contenido', 'Peso', 'Empresa'], 'required'],
-            [['idCarga', 'Empresa'], 'integer'],
+            [['FechaLimite', 'ValorOfertado', 'Contenido', 'Peso', 'Empresa'], 'required'],
             [['FechaLimite'], 'safe'],
+            [['Empresa'], 'integer'],
             [['ValorOfertado', 'Contenido', 'Peso'], 'string', 'max' => 25],
-            [['idCarga'], 'unique'],
             [['Empresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['Empresa' => 'idEmpresa']],
         ];
     }
