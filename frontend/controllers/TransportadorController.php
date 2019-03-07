@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\models;
+namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Vehiculo;
-use frontend\models\VehiculoSearch;
+use frontend\models\Transportador;
+use frontend\models\TransportadorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * VehiculoController implements the CRUD actions for Vehiculo model.
+ * TransportadorController implements the CRUD actions for Transportador model.
  */
-class VehiculoController extends Controller
+class TransportadorController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class VehiculoController extends Controller
     }
 
     /**
-     * Lists all Vehiculo models.
+     * Lists all Transportador models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new VehiculoSearch();
+        $searchModel = new TransportadorSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class VehiculoController extends Controller
     }
 
     /**
-     * Displays a single Vehiculo model.
+     * Displays a single Transportador model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,16 +58,16 @@ class VehiculoController extends Controller
     }
 
     /**
-     * Creates a new Vehiculo model.
+     * Creates a new Transportador model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Vehiculo();
+        $model = new Transportador();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idVehiculo]);
+            return $this->redirect(['view', 'id' => $model->idTransportador]);
         }
 
         return $this->render('create', [
@@ -76,7 +76,7 @@ class VehiculoController extends Controller
     }
 
     /**
-     * Updates an existing Vehiculo model.
+     * Updates an existing Transportador model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +87,7 @@ class VehiculoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idVehiculo]);
+            return $this->redirect(['view', 'id' => $model->idTransportador]);
         }
 
         return $this->render('update', [
@@ -96,7 +96,7 @@ class VehiculoController extends Controller
     }
 
     /**
-     * Deletes an existing Vehiculo model.
+     * Deletes an existing Transportador model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class VehiculoController extends Controller
     }
 
     /**
-     * Finds the Vehiculo model based on its primary key value.
+     * Finds the Transportador model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Vehiculo the loaded model
+     * @return Transportador the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Vehiculo::findOne($id)) !== null) {
+        if (($model = Transportador::findOne($id)) !== null) {
             return $model;
         }
 

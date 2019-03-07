@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\models;
+namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Empresa;
-use frontend\models\EmpresaSearch;
+use frontend\models\Vehiculo;
+use frontend\models\VehiculoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EmpresaController implements the CRUD actions for Empresa model.
+ * VehiculoController implements the CRUD actions for Vehiculo model.
  */
-class EmpresaController extends Controller
+class VehiculoController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Lists all Empresa models.
+     * Lists all Vehiculo models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new EmpresaSearch();
+        $searchModel = new VehiculoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Displays a single Empresa model.
+     * Displays a single Vehiculo model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,16 +58,16 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Creates a new Empresa model.
+     * Creates a new Vehiculo model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Empresa();
+        $model = new Vehiculo();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            return $this->redirect(['view', 'id' => $model->idVehiculo]);
         }
 
         return $this->render('create', [
@@ -76,7 +76,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Updates an existing Empresa model.
+     * Updates an existing Vehiculo model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +87,7 @@ class EmpresaController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            return $this->redirect(['view', 'id' => $model->idVehiculo]);
         }
 
         return $this->render('update', [
@@ -96,7 +96,7 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Deletes an existing Empresa model.
+     * Deletes an existing Vehiculo model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Finds the Empresa model based on its primary key value.
+     * Finds the Vehiculo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Empresa the loaded model
+     * @return Vehiculo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Empresa::findOne($id)) !== null) {
+        if (($model = Vehiculo::findOne($id)) !== null) {
             return $model;
         }
 

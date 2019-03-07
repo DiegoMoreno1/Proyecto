@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\models;
+namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Transportador;
-use frontend\models\TransportadorSearch;
+use frontend\models\Oferta;
+use frontend\models\OfertaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TransportadorController implements the CRUD actions for Transportador model.
+ * OfertaController implements the CRUD actions for Oferta model.
  */
-class TransportadorController extends Controller
+class OfertaController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class TransportadorController extends Controller
     }
 
     /**
-     * Lists all Transportador models.
+     * Lists all Oferta models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TransportadorSearch();
+        $searchModel = new OfertaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class TransportadorController extends Controller
     }
 
     /**
-     * Displays a single Transportador model.
+     * Displays a single Oferta model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,16 +58,16 @@ class TransportadorController extends Controller
     }
 
     /**
-     * Creates a new Transportador model.
+     * Creates a new Oferta model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Transportador();
+        $model = new Oferta();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idTransportador]);
+            return $this->redirect(['view', 'id' => $model->idOferta]);
         }
 
         return $this->render('create', [
@@ -76,7 +76,7 @@ class TransportadorController extends Controller
     }
 
     /**
-     * Updates an existing Transportador model.
+     * Updates an existing Oferta model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +87,7 @@ class TransportadorController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idTransportador]);
+            return $this->redirect(['view', 'id' => $model->idOferta]);
         }
 
         return $this->render('update', [
@@ -96,7 +96,7 @@ class TransportadorController extends Controller
     }
 
     /**
-     * Deletes an existing Transportador model.
+     * Deletes an existing Oferta model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class TransportadorController extends Controller
     }
 
     /**
-     * Finds the Transportador model based on its primary key value.
+     * Finds the Oferta model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Transportador the loaded model
+     * @return Oferta the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Transportador::findOne($id)) !== null) {
+        if (($model = Oferta::findOne($id)) !== null) {
             return $model;
         }
 

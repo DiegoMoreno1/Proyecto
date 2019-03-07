@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\models;
+namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Oferta;
-use frontend\models\OfertaSearch;
+use frontend\models\Carga;
+use frontend\models\CargaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * OfertaController implements the CRUD actions for Oferta model.
+ * CargaController implements the CRUD actions for Carga model.
  */
-class OfertaController extends Controller
+class CargaController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class OfertaController extends Controller
     }
 
     /**
-     * Lists all Oferta models.
+     * Lists all Carga models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new OfertaSearch();
+        $searchModel = new CargaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class OfertaController extends Controller
     }
 
     /**
-     * Displays a single Oferta model.
+     * Displays a single Carga model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,16 +58,16 @@ class OfertaController extends Controller
     }
 
     /**
-     * Creates a new Oferta model.
+     * Creates a new Carga model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Oferta();
+        $model = new Carga();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idOferta]);
+            return $this->redirect(['view', 'id' => $model->idCarga]);
         }
 
         return $this->render('create', [
@@ -76,7 +76,7 @@ class OfertaController extends Controller
     }
 
     /**
-     * Updates an existing Oferta model.
+     * Updates an existing Carga model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +87,7 @@ class OfertaController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idOferta]);
+            return $this->redirect(['view', 'id' => $model->idCarga]);
         }
 
         return $this->render('update', [
@@ -96,7 +96,7 @@ class OfertaController extends Controller
     }
 
     /**
-     * Deletes an existing Oferta model.
+     * Deletes an existing Carga model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class OfertaController extends Controller
     }
 
     /**
-     * Finds the Oferta model based on its primary key value.
+     * Finds the Carga model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Oferta the loaded model
+     * @return Carga the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Oferta::findOne($id)) !== null) {
+        if (($model = Carga::findOne($id)) !== null) {
             return $model;
         }
 

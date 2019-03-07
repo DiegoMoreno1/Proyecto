@@ -1,18 +1,18 @@
 <?php
 
-namespace frontend\models;
+namespace frontend\controllers;
 
 use Yii;
-use frontend\models\Carga;
-use frontend\models\CargaSearch;
+use frontend\models\Empresa;
+use frontend\models\EmpresaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CargaController implements the CRUD actions for Carga model.
+ * EmpresaController implements the CRUD actions for Empresa model.
  */
-class CargaController extends Controller
+class EmpresaController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class CargaController extends Controller
     }
 
     /**
-     * Lists all Carga models.
+     * Lists all Empresa models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new CargaSearch();
+        $searchModel = new EmpresaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class CargaController extends Controller
     }
 
     /**
-     * Displays a single Carga model.
+     * Displays a single Empresa model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,16 +58,16 @@ class CargaController extends Controller
     }
 
     /**
-     * Creates a new Carga model.
+     * Creates a new Empresa model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Carga();
+        $model = new Empresa();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idCarga]);
+            return $this->redirect(['view', 'id' => $model->idEmpresa]);
         }
 
         return $this->render('create', [
@@ -76,7 +76,7 @@ class CargaController extends Controller
     }
 
     /**
-     * Updates an existing Carga model.
+     * Updates an existing Empresa model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,7 +87,7 @@ class CargaController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idCarga]);
+            return $this->redirect(['view', 'id' => $model->idEmpresa]);
         }
 
         return $this->render('update', [
@@ -96,7 +96,7 @@ class CargaController extends Controller
     }
 
     /**
-     * Deletes an existing Carga model.
+     * Deletes an existing Empresa model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class CargaController extends Controller
     }
 
     /**
-     * Finds the Carga model based on its primary key value.
+     * Finds the Empresa model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Carga the loaded model
+     * @return Empresa the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Carga::findOne($id)) !== null) {
+        if (($model = Empresa::findOne($id)) !== null) {
             return $model;
         }
 

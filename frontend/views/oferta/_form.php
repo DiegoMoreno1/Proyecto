@@ -12,8 +12,6 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'idOferta')->textInput() ?>
-
     <?= $form->field($model, 'Fecha')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'Valorpropuesta')->textInput(['maxlength' => true]) ?>
