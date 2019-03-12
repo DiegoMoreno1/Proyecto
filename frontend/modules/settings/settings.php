@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\settings;
+namespace frontend\modules\settings;
 
 /**
  * settings module definition class
@@ -10,7 +10,7 @@ class settings extends \yii\base\Module
     /**
      * {@inheritdoc}
      */
-    public $controllerNamespace = 'backend\modules\settings\controllers';
+    public $controllerNamespace = 'frontend\modules\settings\controllers';
 
     /**
      * {@inheritdoc}

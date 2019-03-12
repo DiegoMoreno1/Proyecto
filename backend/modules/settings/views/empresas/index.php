@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\modules\settings\models\CargaSearch */
+/* @var $searchModel backend\modules\settings\models\EmpresaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Cargas';
+$this->title = 'Empresas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="carga-index">
+<div class="empresa-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Carga', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Empresa', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -25,12 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'idCarga',
-            'FechaLimite',
-            'ValorOfertado',
-            'Contenido',
-            'Peso',
-            //'Empresa',
+            'idEmpresa',
+            'Nombre',
+            'Rsocial',
+            'NombreR',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
