@@ -33,11 +33,10 @@ class Vehiculo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idVehiculo', 'Placa', 'Marca', 'PSoat', 'PMarca', 'Transportador'], 'required'],
-            [['idVehiculo', 'Transportador'], 'integer'],
+            [['Placa', 'Marca', 'PSoat', 'PMarca', 'Transportador'], 'required'],
+            [['Transportador'], 'integer'],
             [['Placa', 'Marca'], 'string', 'max' => 25],
             [['PSoat', 'PMarca'], 'string', 'max' => 5],
-            [['idVehiculo'], 'unique'],
             [['Transportador'], 'exist', 'skipOnError' => true, 'targetClass' => Transportador::className(), 'targetAttribute' => ['Transportador' => 'idTransportador']],
         ];
     }

@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+namespace frontend\models;
 
 use Yii;
 
@@ -30,10 +31,8 @@ class Empresa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idEmpresa', 'Nombre', 'Rsocial', 'NombreR'], 'required'],
-            [['idEmpresa'], 'integer'],
+            [['Nombre', 'Rsocial', 'NombreR'], 'required'],
             [['Nombre', 'Rsocial', 'NombreR'], 'string', 'max' => 25],
-            [['idEmpresa'], 'unique'],
         ];
     }
 

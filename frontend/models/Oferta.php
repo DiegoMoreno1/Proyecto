@@ -32,11 +32,11 @@ class Oferta extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idOferta', 'Fecha', 'Valorpropuesta', 'Vehiculo', 'Carga'], 'required'],
-            [['idOferta', 'Vehiculo', 'Carga'], 'integer'],
+
+            [['Fecha', 'Valorpropuesta', 'Vehiculo', 'Carga'], 'required'],
+            [['Vehiculo', 'Carga'], 'integer'],
             [['Fecha'], 'string', 'max' => 15],
             [['Valorpropuesta'], 'string', 'max' => 45],
-            [['idOferta'], 'unique'],
             [['Carga'], 'exist', 'skipOnError' => true, 'targetClass' => Carga::className(), 'targetAttribute' => ['Carga' => 'idCarga']],
             [['Vehiculo'], 'exist', 'skipOnError' => true, 'targetClass' => Vehiculo::className(), 'targetAttribute' => ['Vehiculo' => 'idVehiculo']],
         ];
