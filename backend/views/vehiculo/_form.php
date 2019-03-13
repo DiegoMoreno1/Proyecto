@@ -12,15 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Placa')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Placa')->textInput(['placeholder' => "Ingrese la placa de su vehiculo"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Marca')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Marca')->textInput(['placeholder' => "Ingrese la marca de su vehiculo"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'PSoat')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'PSoat')->textInput(['placeholder' => "Posee Soat ?"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'PMarca')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'PMarca')->textInput(['placeholder' => "Posee Registro Tecnico Mecanica ?"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Transportador')->textInput() ?>
+    <?= $form->field($model, 'Transportador')->textInput(['placeholder' => "Ingrese su transportador"]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>

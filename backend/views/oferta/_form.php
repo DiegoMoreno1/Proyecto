@@ -12,13 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Fecha')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Fecha')->textInput(['placeholder' => "Ingrese la fecha"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Valorpropuesta')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Valorpropuesta')->textInput(['placeholder' => "Ingrese el valor de su propuesta"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Vehiculo')->textInput() ?>
+    <?= $form->field($model, 'Vehiculo')->textInput(['placeholder' => "Ingrese el codigo de su vehiculo"]) ?>
 
-    <?= $form->field($model, 'Carga')->textInput() ?>
+    <?= $form->field($model, 'Carga')->textInput(['placeholder' => "Ingrese el contenido de la carga"]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
