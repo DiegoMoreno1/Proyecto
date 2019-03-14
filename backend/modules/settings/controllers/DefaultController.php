@@ -5,7 +5,7 @@ namespace backend\modules\settings\controllers;
 use yii\web\Controller;
 
 /**
- * Default controller for the `setings` module
+ * Default controller for the `settings` module
  */
 class DefaultController extends Controller
 {
