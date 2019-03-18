@@ -30,7 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'ValorOfertado',
             'Contenido',
             'Peso',
-            //'Empresa',
+            'Origen',
+            'Destino',
+            'Empresa',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

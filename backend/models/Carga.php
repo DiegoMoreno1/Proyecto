@@ -12,6 +12,8 @@ use Yii;
  * @property string $ValorOfertado
  * @property string $Contenido
  * @property string $Peso
+ * @property string $Origen
+ * @property string $Destino
  * @property int $Empresa
  *
  * @property Empresa $empresa
@@ -33,10 +35,10 @@ class Carga extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['FechaLimite', 'ValorOfertado', 'Contenido', 'Peso', 'Empresa'], 'required'],
+            [['FechaLimite', 'ValorOfertado', 'Contenido', 'Peso', 'Origen', 'Destino', 'Empresa'], 'required'],
             [['FechaLimite'], 'safe'],
             [['Empresa'], 'integer'],
-            [['ValorOfertado', 'Contenido', 'Peso'], 'string', 'max' => 25],
+            [['ValorOfertado', 'Contenido', 'Peso', 'Origen', 'Destino'], 'string', 'max' => 25],
             [['Empresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['Empresa' => 'idEmpresa']],
         ];
     }
@@ -52,6 +54,8 @@ class Carga extends \yii\db\ActiveRecord
             'ValorOfertado' => 'Valor Ofertado',
             'Contenido' => 'Contenido',
             'Peso' => 'Peso',
+            'Origen' => 'Origen',
+            'Destino' => 'Destino',
             'Empresa' => 'Empresa',
         ];
     }

@@ -25,11 +25,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'Peso') ?>
 
-    <?php // echo $form->field($model, 'Empresa') ?>
+    <?php  $form->field($model, 'Origen') ?>
+
+    <?php $form->field($model, 'Destino') ?>
+
+    <?php  $form->field($model, 'Empresa') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Cancelar', ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

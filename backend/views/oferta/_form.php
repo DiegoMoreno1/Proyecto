@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Oferta */
@@ -12,7 +13,18 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Fecha')->textInput(['placeholder' => "Ingrese la fecha"],['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'Fecha')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+         'inline' => false, 
+         // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => false,
+            'format' => 'yy-m-d'
+        ]
+]);?>
 
     <?= $form->field($model, 'Valorpropuesta')->textInput(['placeholder' => "Ingrese el valor de su propuesta"],['maxlength' => true]) ?>
 

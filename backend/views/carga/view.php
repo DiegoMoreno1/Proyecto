@@ -34,6 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'ValorOfertado',
             'Contenido',
             'Peso',
+            'Origen',
+            'Destino',
             'Empresa',
         ],
     ]) ?>

@@ -18,7 +18,7 @@ class CargaSearch extends Carga
     {
         return [
             [['idCarga', 'Empresa'], 'integer'],
-            [['FechaLimite', 'ValorOfertado', 'Contenido', 'Peso'], 'safe'],
+            [['FechaLimite', 'ValorOfertado', 'Contenido', 'Peso', 'Origen', 'Destino'], 'safe'],
         ];
     }
 
@@ -65,7 +65,9 @@ class CargaSearch extends Carga
 
         $query->andFilterWhere(['like', 'ValorOfertado', $this->ValorOfertado])
             ->andFilterWhere(['like', 'Contenido', $this->Contenido])
-            ->andFilterWhere(['like', 'Peso', $this->Peso]);
+            ->andFilterWhere(['like', 'Peso', $this->Peso])
+            ->andFilterWhere(['like', 'Origen', $this->Origen])
+            ->andFilterWhere(['like', 'Destino', $this->Destino]);
 
         return $dataProvider;
     }

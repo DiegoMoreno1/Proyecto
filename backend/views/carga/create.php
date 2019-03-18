@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Carga */
 
-$this->title = 'Crear Carga';
+$this->title = 'CrearCarga';
 $this->params['breadcrumbs'][] = ['label' => 'Cargas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
