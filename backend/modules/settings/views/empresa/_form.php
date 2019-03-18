@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Empresa */
+/* @var $model backend\modules\settings\models\Empresa */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -12,11 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <?= $form->field($model, 'idEmpresa')->textInput() ?>
+
     <?= $form->field($model, 'Nombre')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'Rsocial')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'NombreR')->textInput(['placeholder' => "Ingrese su Nombre de representante",'maxlength' => true]) ?>
+    <?= $form->field($model, 'NombreR')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
