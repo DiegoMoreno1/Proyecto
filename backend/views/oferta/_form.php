@@ -3,7 +3,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
-
+use yii\helpers\ArrayHelper;
+use backend\models\Vehiculo;
+use backend\models\Carga;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Oferta */
 /* @var $form yii\widgets\ActiveForm */
@@ -28,9 +30,20 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'Valorpropuesta')->textInput(['placeholder' => "Ingrese el valor de su propuesta"],['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Vehiculo')->textInput(['placeholder' => "Ingrese el codigo de su vehiculo"]) ?>
 
-    <?= $form->field($model, 'Carga')->textInput(['placeholder' => "Ingrese el contenido de la carga"]) ?>
+   
+        <?= $form->field($model, 'Vehiculo')->dropDownList(
+            ArrayHelper::map(Vehiculo::find()->all(), 'idVehiculo', 'Placa'),
+             ['prompt'=>'Seleccione un Vehiculo',
+              
+            ]); ?>
+    
+   
+     <?= $form->field($model, 'Carga')->dropDownList(
+            ArrayHelper::map(Carga::find()->all(), 'idCarga', 'Contenido'),
+             ['prompt'=>'Seleccione una Carga',
+              
+            ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>

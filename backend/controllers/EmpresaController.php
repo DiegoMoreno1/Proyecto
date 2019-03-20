@@ -8,7 +8,8 @@ use backend\models\EmpresaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\ForbiddenHttpException;
+use yii\bootstrap\Modal;
 /**
  * EmpresaController implements the CRUD actions for Empresa model.
  */
@@ -64,15 +65,26 @@ class EmpresaController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Empresa();
+       if (Yii::$app->user->can('Administrar Empresa')) {
+           $model = new Empresa();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idEmpresa]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->idEmpresa]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+            return $this->render('create', [
+                'model' => $model,
+        ]);  
+        }else{
+            throw new ForbiddenHttpException;
+            //return $this->redirect(['site/index']);
+            //echo "Usted no tiene permiso para realizar esta accion";
+            //echo'<script type="text/javascript">
+                 //alert("Usted no tiene permiso para realizar esta opcion");
+                // window.location.href="index.php";
+                // </script>';
+            
+        }
     }
 
     /**

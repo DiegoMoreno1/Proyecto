@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Empresa */
+/* @var $model backend\models\Oferta */
 
-$this->title = $model->idEmpresa;
-$this->params['breadcrumbs'][] = ['label' => 'Empresas', 'url' => ['index']];
+$this->title = $model->idOferta;
+$this->params['breadcrumbs'][] = ['label' => 'Ofertas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="empresa-view">
+<div class="oferta-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Actualizar', ['update', 'id' => $model->idEmpresa], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Eliminar', ['delete', 'id' => $model->idEmpresa], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->idOferta], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id' => $model->idOferta], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Esta seguro de eliminar?',
@@ -29,12 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idEmpresa',
-            'Nombre',
-            'Rsocial',
-            'NombreR',
-            'TelefonoContacto',
-            'Email:email',
+            'idOferta',
+            'Fecha',
+            'Valorpropuesta',
+            'Vehiculo',
+            'Carga',
         ],
     ]) ?>
 

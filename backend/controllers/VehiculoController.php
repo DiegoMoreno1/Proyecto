@@ -108,6 +108,7 @@ class VehiculoController extends Controller
 
         return $this->redirect(['index']);
     }
+    
 
     /**
      * Finds the Vehiculo model based on its primary key value.
