@@ -3,7 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
-
+use yii\helpers\ArrayHelper;
+use backend\models\Empresa;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Carga */
 /* @var $form yii\widgets\ActiveForm */
@@ -34,10 +35,14 @@ use dosamigos\datepicker\DatePicker;
 
     <?= $form->field($model, 'Destino')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Empresa')->textInput() ?>
-
+    
+    <?= $form->field($model, 'Empresa')->dropDownList(
+            ArrayHelper::map(Empresa::find()->all(), 'idEmpresa', 'Nombre'),
+             ['prompt'=>'Seleccione una Empresa',
+              
+            ]); ?>
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use hoaaah\universal\UniversalAsset;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Carga */
@@ -21,7 +22,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'Peso')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'Empresa')->textInput() ?>
-
+     <? //$image = hoaaah\universal\UniversalAsset::register($this); ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

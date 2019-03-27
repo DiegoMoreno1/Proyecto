@@ -65,18 +65,27 @@ class EmpresaController extends Controller
      */
     public function actionCreate()
     {
-       if (Yii::$app->user->can('Administrar Empresa')) {
-           $model = new Empresa();
+        $model = new Empresa();
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->idEmpresa]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->idEmpresa]);
         }
 
-            return $this->render('create', [
-                'model' => $model,
-        ]);  
-        }else{
-            throw new ForbiddenHttpException;
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+       //if (Yii::$app->user->can('Administrar Empresa')) {
+           //$model = new Empresa();
+
+            //if ($model->load(Yii::$app->request->post()) && $model->save()) {
+               // return $this->redirect(['view', 'id' => $model->idEmpresa]);
+      //  }
+
+           // return $this->render('create', [
+                //'model' => $model,
+        //]);  
+       // }else{
+            //throw new ForbiddenHttpException;
             //return $this->redirect(['site/index']);
             //echo "Usted no tiene permiso para realizar esta accion";
             //echo'<script type="text/javascript">
@@ -84,7 +93,7 @@ class EmpresaController extends Controller
                 // window.location.href="index.php";
                 // </script>';
             
-        }
+       // }
     }
 
     /**

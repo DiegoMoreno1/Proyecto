@@ -15,15 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'idCarga') ?>
-
-    <?= $form->field($model, 'FechaLimite') ?>
-
-    <?= $form->field($model, 'ValorOfertado') ?>
-
-    <?= $form->field($model, 'Contenido') ?>
-
-    <?= $form->field($model, 'Peso') ?>
+    <?= $form->field($model, 'globalSearch') ?>
 
     <?php // echo $form->field($model, 'Empresa') ?>
 
