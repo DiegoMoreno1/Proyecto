@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Subastas WEb';
 ?>
 <div class="site-index"  style="background-color:lightblue">
 
