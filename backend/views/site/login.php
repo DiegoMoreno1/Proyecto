@@ -50,6 +50,13 @@
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
+					<div align="center" >
+						<?php 
+							if (isset($_GET["error"])) {
+							echo "<a> Datos Incorrectos </a>";
+							}
+	 					?>	
+					</div>
 					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
