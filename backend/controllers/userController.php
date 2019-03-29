@@ -55,7 +55,7 @@ require_once("backend/models/User.php");
                     header("Location: index.php?c=home&a=login&error=true");
                 }
             }else{
-                require "backend/views/site/login.html";
+                require "backend/views/site/login.php";
             }
 		}
 
