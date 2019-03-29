@@ -35,7 +35,7 @@
 						Ingreso de Miembros
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+					<div class="wrap-input100 validate-input" data-validate = "Porfavor llene el campo">
 						<input class="input100" type="text" name="Login[username]" placeholder="Usuario">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
@@ -43,7 +43,7 @@
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input" data-validate = "Porfavor llene el campo">
 						<input class="input100" type="password" name="Login[password]" placeholder="Contrase&ntilde;a">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
