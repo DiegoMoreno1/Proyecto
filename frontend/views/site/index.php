@@ -31,9 +31,8 @@ Licence URI: http://www.os-templates.com/template-terms
       </div>
       <div class="fl_right">
         <ul>
-          <li><a href="http://localhost/Proyecto/frontend/web/index.php">Acerca de Nosotros</a></li>
-          <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=site%2Fsignup">Ver Cargas</a></li>
-          <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=site%2Fsignup">Ver Ofertas</a></li>
+          <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=carga">Cargas Disponibles</a></li>
+          <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=oferta">Ofertas Disponibles</a></li>
           <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=site%2Fsignup">Registrarse</a></li>
           <li><a href="http://localhost/Proyecto/backend/web/index.php?r=site%2Flogin">Ingresar</a></li>
         </ul>

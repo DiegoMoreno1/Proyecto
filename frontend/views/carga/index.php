@@ -10,29 +10,33 @@ use yii\grid\GridView;
 $this->title = 'Cargas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <div class="carga-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Carga', ['create'], ['class' => 'btn btn-success']) ?>
+    Te intereza alguna carga ? <br>
+    Puedes ofertarla registrandote en la pagina principal.<br>
+    Para ver los datos de la empresa tambien tienes que registrarte.
     </p>
-
+<strong>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'idCarga',
+            //'idCarga',
             'FechaLimite',
             'ValorOfertado',
             'Contenido',
             'Peso',
             //'Empresa',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            
         ],
-    ]); ?>
+    ]); ?></strong>
 </div>
