@@ -85,6 +85,10 @@ class SiteController extends Controller
             ]);
         }
     }
+     public function acceso()
+    {
+        
+    }
 
     /**
      * Logout action.

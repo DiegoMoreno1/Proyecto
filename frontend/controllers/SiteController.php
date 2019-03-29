@@ -12,7 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use backend\models\AuthItem;
+
 /**
  * Site controller
  */
@@ -150,7 +150,6 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $authitems = AuthItem::find()->all();
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
             if ($user = $model->signup()) {
@@ -162,7 +161,6 @@ class SiteController extends Controller
 
         return $this->render('signup', [
             'model' => $model,
-            'authitems'=>$authitems,
         ]);
     }
 

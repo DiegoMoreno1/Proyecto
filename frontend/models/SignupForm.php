@@ -1,6 +1,6 @@
 <?php
 namespace frontend\models;
-use backend\models\AuthAssignment;
+
 use yii\base\Model;
 use common\models\User;
 
@@ -12,7 +12,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
-    public $Roll;
+
 
     /**
      * {@inheritdoc}
@@ -35,7 +35,6 @@ class SignupForm extends Model
             ['password', 'string', 'min' => 6],
         ];
     }
-    
 
     /**
      * Signs user up.
@@ -54,16 +53,6 @@ class SignupForm extends Model
         $user->setPassword($this->password);
         $user->generateAuthKey();
         
-
-        $RollList= $_POST['SignupForm']['Roll'];
-
-        foreach ($RollList as  $value) {
-            $newRoll = new AuthAssignment;
-            $newRoll->user_id = $user->id;
-            $newRoll->item_name = $value;
-            var_dump($newRoll->errors);
-            $newRoll->save();
-        }
-       return $user->save() ? $user : null;
+        return $user->save() ? $user : null;
     }
 }
