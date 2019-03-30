@@ -4,8 +4,7 @@ require_once("backend/models/User.php");
 	class user{
 
 		public static function main($action){
-
-			 if (!isset($_SESSION["User"]) && $_GET["a"] != "login" && $_GET["a"] != "home")
+			if (!isset($_SESSION["User"]) && $_GET["a"] != "login" && $_GET["a"] != "home")
                     header("location: index.php?c=home&a=login");
 
 	        $_this = new user();
@@ -43,13 +42,13 @@ require_once("backend/models/User.php");
                     $_SESSION["Roll"] = "Administrador";
 
                     echo "soy Administrador";
-                    header("location: index.php?c=home&a=home");
+                    header("location:backend/web/index.php"); 
                 }else if(password_verify($password_hash,$usuario->password_hash) && $usuario->Roll == "Empleado"){
                     $_SESSION["User"] = $usuario;
                     $_SESSION["Roll"] = "Empleado";
 
                     echo "soy Empleado";
-                    header("location: index.php?c=Documento&a=create");
+                    header("location:backend/web/index2.php");
 
                 }else{
                     header("Location: index.php?c=home&a=login&error=true");
