@@ -34,7 +34,7 @@ Licence URI: http://www.os-templates.com/template-terms
           <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=carga">Cargas Disponibles</a></li>
           <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=oferta">Ofertas Disponibles</a></li>
           <li><a href="http://localhost/Proyecto/frontend/web/index.php?r=site%2Fsignup">Registrarse</a></li>
-          <li><a href="http://localhost/Proyecto/backend/web/index.php?r=site%2Flogin">Ingresar</a></li>
+          <li><a href="http://localhost/Proyecto/index.php?c=home&a=login">Ingresar</a></li>
         </ul>
       </div>
     </div>
@@ -85,7 +85,7 @@ Licence URI: http://www.os-templates.com/template-terms
         </article>
       </li>
     </ul>
-    <footer class="center"><a class="btn" href="http://localhost/final/frontend/web/index.html">PORTAL ABIERTO</a></footer>
+    <footer class="center"><a class="btn" href="http://localhost/Proyecto/frontend/web/index.php">PORTAL ABIERTO</a></footer>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>

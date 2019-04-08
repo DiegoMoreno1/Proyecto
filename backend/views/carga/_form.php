@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use dosamigos\datepicker\DatePicker;
 use yii\helpers\ArrayHelper;
 use backend\models\Empresa;
+use kartik\select2\Select2;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Carga */
 /* @var $form yii\widgets\ActiveForm */
@@ -21,9 +22,10 @@ use backend\models\Empresa;
         //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
         'clientOptions' => [
             'autoclose' => false,
-            'format' => 'yy-m-d'
+            'format' => 'yyyy-mm-dd'
         ]
 ]);?>
+
 
     <?= $form->field($model, 'ValorOfertado')->textInput(['maxlength' => true]) ?>
 
@@ -35,15 +37,18 @@ use backend\models\Empresa;
 
     <?= $form->field($model, 'Destino')->textInput(['maxlength' => true]) ?>
 
-    
-    <?= $form->field($model, 'Empresa')->dropDownList(
-            ArrayHelper::map(Empresa::find()->all(), 'idEmpresa', 'Nombre'),
-             ['prompt'=>'Seleccione una Empresa',
-              
-            ]); ?>
+    <?=  $form->field($model, 'Empresa')->widget(Select2::classname(), [
+        'data' => ArrayHelper::map(Empresa::find()->all(), 'idEmpresa', 'Nombre'),
+        'language' => 'es',
+        'options' => ['placeholder' => 'Escoja la empresa '],
+         'pluginOptions' => [
+         'allowClear' => true
+    ],
+]); ?>
+            </div>
     <div class="form-group">
         <?= Html::submitButton('Guardar', ['class' => 'btn btn-success']) ?>
-    </div>
+ 
 
     <?php ActiveForm::end(); ?>
 

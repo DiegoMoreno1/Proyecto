@@ -6,9 +6,13 @@ use dosamigos\datepicker\DatePicker;
 use yii\helpers\ArrayHelper;
 use backend\models\Vehiculo;
 use backend\models\Carga;
+use yii\grid\GridView;
+use backend\controllers\CargaController;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Oferta */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $searchModel backend\models\OfertaSearch */
+/*@var $dataProvider yii\data\ActiveDataProvider*/
 ?>
 
 <div class="oferta-form">
@@ -24,7 +28,7 @@ use backend\models\Carga;
         //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
         'clientOptions' => [
             'autoclose' => false,
-            'format' => 'yy-m-d'
+            'format' => 'yy-mm-dd'
         ]
 ]);?>
 
@@ -37,7 +41,8 @@ use backend\models\Carga;
              ['prompt'=>'Seleccione un Vehiculo',
               
             ]); ?>
-    
+           
+     
    
      <?= $form->field($model, 'Carga')->dropDownList(
             ArrayHelper::map(Carga::find()->all(), 'idCarga', 'Contenido'),

@@ -1,4 +1,5 @@
 <?php 
+require_once("User.php");
 	class homeController{
 
 		public static function main($action){
@@ -30,6 +31,8 @@
 			if (isset($_POST["Login"])) { //aqui el login si el documento y la contraseña son verdaderos entonces nos dejara ingresar al home!
 				$rol = $_POST["Login"]["username"];
 				$pas = $_POST["Login"]["password"];
+				$id = $id;
+                
 				$Usuario = new user();
 				$Usuario->findbydocument($rol);
 				if (password_verify( $pas,$Usuario->rol)) {
